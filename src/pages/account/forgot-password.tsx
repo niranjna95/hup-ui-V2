@@ -12,14 +12,14 @@ const ForgotPasswordPage: NextPage<ForgotPasswordPageProps> & {
   return (
     <>
       <Head>
-        <title>Forgot Password - Education DNA</title>
+        <title>Forgot Password - Happy Utsaw Palace</title>
       </Head>
 
       <div className="login_form_block w-100">
         <img
-          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/EDNA-long-logo.jpg`}
-          alt="Education DNA"
-          title="Education DNA Logo"
+          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
+          alt="Happy Utsaw Palace"
+          title="Happy Utsaw Palace Logo"
         />
 
         <ForgotPassword />

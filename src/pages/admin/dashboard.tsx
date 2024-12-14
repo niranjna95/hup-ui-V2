@@ -5,7 +5,7 @@ const AdminDashboardPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Admin | Admin List - Education DNA</title>
+        <title>Admin | Admin List - Happy Utsaw Palace</title>
       </Head>
 
       <h1>Admin List Page</h1>

@@ -17,14 +17,14 @@ const ResetPasswordPage: NextPage<ResetPasswordPageProps> & {
   return (
     <>
       <Head>
-        <title>Reset Password - Education DNA</title>
+        <title>Reset Password - Happy Utsaw Palace</title>
       </Head>
 
       <div className="login_form_block w-100">
         <img
-          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/EDNA-long-logo.jpg`}
-          alt="Education DNA"
-          title="Education DNA Logo"
+          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
+          alt="Happy Utsaw Palace"
+          title="Happy Utsaw Palace Logo"
         />
 
         <ResetPassword token={token} userId={userId} />

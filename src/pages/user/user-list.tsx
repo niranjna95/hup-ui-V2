@@ -6,7 +6,7 @@ const UserList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Admin | User List - Education DNA</title>
+        <title>Admin | User List - Happy Utsaw Palace</title>
       </Head>
 
       <div className="container">

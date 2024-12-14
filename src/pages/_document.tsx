@@ -7,7 +7,7 @@ export default function Document() {
         <link
           rel="icon"
           type="image/svg+xml"
-          href={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/favicon.ico`}
+          href={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/favicon.png`}
         />
 
         <link

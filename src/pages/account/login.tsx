@@ -12,16 +12,18 @@ const LoginPage: NextPage<LoginPageProps> & {
   return (
     <>
       <Head>
-        <title>Login - Education DNA</title>
+        <title>Login - Happy Utsaw Palace</title>
       </Head>
 
       <div className="login_form_block w-100">
         <img
-          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/EDNA-long-logo.jpg`}
-          alt="Education DNA"
-          title="Education DNA Logo"
+          src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
+          alt="Happy Utsaw Palace"
+          title="Happy Utsaw Palace Logo"
+          width={100}
+          height={100}
         />
-        <h1>Welcome To EDNA</h1>
+        <h1>Welcome To HUP</h1>
 
         <Login />
       </div>
