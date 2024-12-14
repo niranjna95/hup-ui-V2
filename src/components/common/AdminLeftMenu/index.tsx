@@ -5,7 +5,12 @@ import styles from "./index.module.css";
 import { Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faCompass, faSave, faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCompass,
+  faSave,
+  faUser,
+  faCalendar,
+} from "@fortawesome/free-regular-svg-icons";
 import { faBookBookmark, faUserCheck } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Logout from "../Logout";
@@ -31,10 +36,12 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
       <div id="SideBar" className={"sidebar_wrap"}>
         <div className="site_logo">
           <img
-            src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/logo-icon.png`}
-            alt="Education DNA"
-            title="Education DNA"
+            src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
+            alt="HUP"
+            title="HUP"
             className="img-fluid"
+            width={50}
+            height={50}
           />
           <strong>{session?.user.fullName}</strong>
         </div>
@@ -57,17 +64,17 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
                   )}`}
                   href="/user/user-list"
                 >
-                  <FontAwesomeIcon icon={faUser} size="1x" />{" "}
-                  <span className="nav_text">Staff</span>
+                  <FontAwesomeIcon icon={faCalendar} size="1x" />{" "}
+                  <span className="nav_text">Booking</span>
                 </Link>
-                <Link className={"nav-item nav-link"} href="/classes">
+                {/* <Link className={"nav-item nav-link"} href="/classes">
                   <FontAwesomeIcon icon={faBookBookmark} size="1x" />{" "}
                   <span className="nav_text">Classes</span>
                 </Link>
                 <Link className={"nav-item nav-link"} href="/students">
                   <FontAwesomeIcon icon={faUserCheck} size="1x" />
                   <span className="nav_text"> Students</span>
-                </Link>
+                </Link> */}
                 <Logout>
                   <span
                     className={"nav-item nav-link"}

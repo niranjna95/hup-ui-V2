@@ -285,8 +285,8 @@ hr {
 }
 
 .side_image {
-  background-image: url(https://cdn.ednaapp.net/source/images/login-banner.jpg);
-  background-image: url(https://cdn.ednaapp.net/source/images/login-banner.jpg);
+  background-image: url(/assets/images/login-banner.jpg);
+  background-image: url(/assets/images/login-banner.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1214,7 +1214,7 @@ hr {
 
 @media (max-width: $mobile) {
   .login_form_bg {
-    background-image: url(https://cdn.ednaapp.net/source/images/login-banner.jpg);
+    background-image: url(/assest/images/login-banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

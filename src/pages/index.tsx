@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>EDNA</h1>
+      <h1>Happy Utsaw Palace</h1>
     </>
   );
 }
