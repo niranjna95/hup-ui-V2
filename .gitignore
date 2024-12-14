@@ -1,0 +1,28 @@
+# React Native related
+node_modules/
+*.log
+*.swp
+*.swo
+*.DS_Store
+ios/Pods/
+android/.gradle/
+android/app/build/
+android/build/
+build/
+*.keystore
+.expo/
+.expo-shared/
+
+# IDE-specific
+.vscode/
+.idea/
+
+# Generated files
+*.lock
+*.map
+.env
+.env.*
+dist/
+.next/
+*.apk
+*.aab
