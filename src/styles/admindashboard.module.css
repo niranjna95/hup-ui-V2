@@ -1,0 +1,20 @@
+.squareCard {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Ensures a perfect square */
+  min-height: 200px; /* Minimum size */
+  max-height: 250px; /* Maximum size for consistency */
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.squareCard .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.squareCard:hover {
+  transform: scale(1.05);
+  background: #f8f9fa; /* Light hover effect */
+}
