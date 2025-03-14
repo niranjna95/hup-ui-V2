@@ -11,7 +11,7 @@ import AdminLayout from "@/components/layout/AdminLayout";
 
 type ComponenetWithLayout = AppProps & {
   Component: AppProps["Component"] & {
-    Layout?: React.ComponentType;
+    Layout?: React.ComponentType<{ children: React.ReactNode }>;
     NoLayout?: boolean;
   };
 };
