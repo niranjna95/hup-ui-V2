@@ -3,7 +3,7 @@ import LoginLayout from "@/components/layout/LoginLayout";
 import CommonProps from "@/models/CommonProps";
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-
+import Image from "next/image";
 interface LoginPageProps extends CommonProps {}
 
 const LoginPage: NextPage<LoginPageProps> & {
@@ -16,7 +16,7 @@ const LoginPage: NextPage<LoginPageProps> & {
       </Head>
 
       <div className="login_form_block w-100">
-        <img
+        <Image
           src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
           alt="Happy Utsaw Palace"
           title="Happy Utsaw Palace Logo"

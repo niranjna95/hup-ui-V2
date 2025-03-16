@@ -7,7 +7,7 @@ interface LogoutProps extends CommonProps {}
 
 const Logout: NextPage<LogoutProps> = (props) => {
   async function logout() {
-    await signOut({ callbackUrl: "/" });
+    await signOut({ callbackUrl: "/account/login" });
   }
 
   return (

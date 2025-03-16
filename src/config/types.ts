@@ -3,4 +3,5 @@ export const TYPES = {
   IHttpService: Symbol.for("IHttpService"),
   IAccountService: Symbol.for("IAccountService"),
   IUserService: Symbol.for("IUserService"),
+  IBookingService: Symbol.for("IBookingService"),
 };
