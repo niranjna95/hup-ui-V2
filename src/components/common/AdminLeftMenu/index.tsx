@@ -17,6 +17,7 @@ import Logout from "../Logout";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { Console } from "console";
+import Image from "next/image";
 
 interface AdminLeftMenuProps extends CommonProps {}
 
@@ -35,7 +36,7 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
     <>
       <div id="SideBar" className={"sidebar_wrap"}>
         <div className="site_logo">
-          <img
+          <Image
             src={`${process.env.NEXT_PUBLIC_CDN_PATH}/images/happy-utsav-palace.png`}
             alt="HUP"
             title="HUP"
@@ -59,10 +60,8 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
                   <span className="nav_text">Dashboard</span>
                 </Link>
                 <Link
-                  className={`nav-item nav-link ${activateLink(
-                    "/user/user-list"
-                  )}`}
-                  href="/user/user-list"
+                  className={`nav-item nav-link ${activateLink("/booking")}`}
+                  href="/admin/booking"
                 >
                   <FontAwesomeIcon icon={faCalendar} size="1x" />{" "}
                   <span className="nav_text">Booking</span>

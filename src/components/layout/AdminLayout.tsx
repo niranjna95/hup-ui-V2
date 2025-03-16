@@ -15,11 +15,13 @@ const AdminLayout: NextPage<AdminLayoutProps> = ({ children }) => {
       </Head>
 
       <div className="dashboard_wrapper" id="colorMode">
-        <AdminLeftMenu />
-        <div id="DashboardPage mr-5">
-          <div className="container">
+        <div id="DashboardPage" className="mr-5">
+          <div className="container-fuild">
             <div className="row">
-              <div className="col-md-8 mx-auto">
+              <div className="col-md-3">
+                <AdminLeftMenu />
+              </div>
+              <div className="col-md-9 mr-5">
                 <div className="eachPage_wrap">{children}</div>
               </div>
             </div>
