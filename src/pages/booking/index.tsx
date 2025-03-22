@@ -10,6 +10,7 @@ import IUnitOfService from "@/services/interfaces/IUnitOfService";
 import { TYPES } from "@/config/types";
 import { BookingDto } from "@/dtos/BookingDto";
 import { format } from "date-fns";
+import axios from "axios";
 
 const AdminDashboardPage: NextPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,7 +18,6 @@ const AdminDashboardPage: NextPage = () => {
   const unitOfService = container.get<IUnitOfService>(TYPES.IUnitOfService);
   const getBookings = async () => {
     const response = await unitOfService.BookingService.get();
-
     try {
       if (response.status === 200 && response.data?.data && response.data) {
         const bookingsDetails = response.data.data;

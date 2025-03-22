@@ -15,7 +15,7 @@ import { faBookBookmark, faUserCheck } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Logout from "../Logout";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { Console } from "console";
 import Image from "next/image";
 
@@ -61,7 +61,7 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
                 </Link>
                 <Link
                   className={`nav-item nav-link ${activateLink("/booking")}`}
-                  href="/admin/booking"
+                  href="/booking"
                 >
                   <FontAwesomeIcon icon={faCalendar} size="1x" />{" "}
                   <span className="nav_text">Booking</span>
