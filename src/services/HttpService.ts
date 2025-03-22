@@ -26,6 +26,14 @@ export default class HttpService implements IHttpService {
     instance.defaults.headers.common["clientId"] = this.clientId;
     instance.defaults.headers.common["Content-Type"] = contentType;
 
+    const accessToken =
+      localStorage.getItem("accessToken") ||
+      sessionStorage.getItem("accessToken");
+    if (accessToken) {
+      instance.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${accessToken}`;
+    }
     //validate response
     instance.interceptors.response.use(
       (response) => {
@@ -35,7 +43,7 @@ export default class HttpService implements IHttpService {
         if (axios.isAxiosError(error)) {
           if (error.response?.status === 401) {
             //401 Unauthorized is the status code to return when the client provides no credentials or invalid credentials.
-            console.log(error); //need to implement
+            console.log(`This is test ${error.request}`); //need to implement
           } else if (error.response?.status === 403) {
             //403 Forbidden is the status code to return when a client has valid credentials but not enough privileges to perform an action on a resource
             console.log("call access-denied page"); //need to implement
