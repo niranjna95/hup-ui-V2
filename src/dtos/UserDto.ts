@@ -18,4 +18,5 @@ export default interface UserDto {
   accessFailedCount: number;
   timezoneId: string;
   roles: RoleDto[];
+  token: string;
 }

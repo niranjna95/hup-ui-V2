@@ -66,7 +66,8 @@ export function middleware_test(req) {
     req.nextUrl.pathname.startsWith("/jobs") ||
     req.nextUrl.pathname.startsWith("/accounts") ||
     req.nextUrl.pathname.startsWith("/uploads") ||
-    req.nextUrl.pathname.startsWith("/profile")
+    req.nextUrl.pathname.startsWith("/profile") ||
+    req.nextUrl.pathname.startsWith("/booking")
   ) {
     return withAuth(req);
   }

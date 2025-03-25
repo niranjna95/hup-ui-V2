@@ -19,7 +19,6 @@ export default class BookingService implements IBookingService {
   }
 
   get(): Promise<AxiosResponse<Response<BookingDto[]>>> {
-    console.log(`Url: ${this.httpService.call()}`);
     const result = this.httpService
       .call()
       .get<BookingDto[], AxiosResponse<Response<BookingDto[]>>>(`/bookings`);
