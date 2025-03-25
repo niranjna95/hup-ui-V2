@@ -3,14 +3,16 @@ import axios from "axios";
 import https from "https";
 import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { NextAuthOptions } from "next-auth";
-
+import { User as NextAuthUser } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 type NextAuthOptionsCallback = (
   req: NextApiRequest,
   res: NextApiResponse
 ) => NextAuthOptions;
-
+export interface CustomUser extends NextAuthUser {
+  token: string;
+}
 const nextAuthOptions: NextAuthOptionsCallback = (
   req: NextApiRequest,
   res: NextApiResponse
@@ -47,11 +49,12 @@ const nextAuthOptions: NextAuthOptionsCallback = (
                 }),
               }
             );
-
+            const { token, user } = response.data.data;
             const cookies = response.headers["set-cookie"] || [];
+
             res.setHeader("Set-Cookie", cookies);
 
-            return response.data.data.user;
+            return { ...user, token };
           } catch (error) {
             if (axios.isAxiosError(error)) {
               throw new Error("Invalid username or password");
@@ -65,11 +68,17 @@ const nextAuthOptions: NextAuthOptionsCallback = (
     secret: `${process.env.NEXTAUTH_SECRET}`,
     callbacks: {
       async jwt({ token, user, account, profile }) {
-        return { ...token, ...user };
+        if (user) {
+          const customUser = user as CustomUser; // Cast user to CustomUser
+          token.user = customUser;
+          token.accessToken = customUser.token;
+        }
+        return token;
       },
 
       async session({ session, token, user }) {
-        session.user = token as unknown as UserDto;
+        session.user = token as unknown as UserDto; // Ensure token is treated as UserDto
+        session.user.token = token.accessToken as string; // Explicitly cast token.accessToken to string
         return session;
       },
     },

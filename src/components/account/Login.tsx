@@ -39,6 +39,9 @@ const Login: NextPage<LoginProps> = (props) => {
         redirectUrl = "/user/user-list";
       }
 
+      localStorage.setItem("at", session.user.token);
+      localStorage.setItem("utz", session.user.timezoneId || "");
+
       router.push(`${redirectUrl}`);
     }
   }, [status]);

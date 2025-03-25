@@ -12,7 +12,7 @@ import { BookingDto } from "@/dtos/BookingDto";
 import { format } from "date-fns";
 import axios from "axios";
 
-const AdminDashboardPage: NextPage = () => {
+const AllBookingPage: NextPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bookings, setBookings] = useState<BookingDto[]>([]);
   const unitOfService = container.get<IUnitOfService>(TYPES.IUnitOfService);
@@ -54,8 +54,8 @@ const AdminDashboardPage: NextPage = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
-              <tr key={booking.id}>
+            {bookings.map((booking, index) => (
+              <tr key={booking.id || `booking-${index}`}>
                 <td>{booking.name}</td>
                 <td>{format(new Date(booking.stayDate), "dd-MM-yyyy")}</td>
                 <td>{format(new Date(booking.checkOutDate), "dd-MM-yyyy")}</td>
@@ -76,7 +76,7 @@ const AdminDashboardPage: NextPage = () => {
         </table>
       </div>
 
-      <Modal
+      {/* <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title="Add New Booking"
@@ -103,7 +103,7 @@ const AdminDashboardPage: NextPage = () => {
             Submit
           </button>
         </form>
-      </Modal>
+      </Modal> */}
     </>
   );
 };
@@ -125,7 +125,7 @@ const DashboardCard: React.FC<CardProps> = ({ title, link }) => {
   );
 };
 
-export default AdminDashboardPage;
+export default AllBookingPage;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return {

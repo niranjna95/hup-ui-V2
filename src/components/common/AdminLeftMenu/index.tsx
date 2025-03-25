@@ -2,7 +2,7 @@ import CommonProps from "@/models/CommonProps";
 import { NextPage } from "next";
 import styles from "./index.module.css";
 
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -59,21 +59,33 @@ const AdminLeftMenu: NextPage<AdminLeftMenuProps> = (props) => {
                   <FontAwesomeIcon icon={faCompass} size="1x" />{" "}
                   <span className="nav_text">Dashboard</span>
                 </Link>
-                <Link
+                {/* <Link
                   className={`nav-item nav-link ${activateLink("/booking")}`}
                   href="/booking"
                 >
                   <FontAwesomeIcon icon={faCalendar} size="1x" />{" "}
                   <span className="nav_text">Booking</span>
-                </Link>
-                {/* <Link className={"nav-item nav-link"} href="/classes">
-                  <FontAwesomeIcon icon={faBookBookmark} size="1x" />{" "}
-                  <span className="nav_text">Classes</span>
-                </Link>
-                <Link className={"nav-item nav-link"} href="/students">
-                  <FontAwesomeIcon icon={faUserCheck} size="1x" />
-                  <span className="nav_text"> Students</span>
                 </Link> */}
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className={`nav-item nav-link ${activateLink("/booking")}`}
+                    as="a"
+                  >
+                    <FontAwesomeIcon icon={faCalendar} size="1x" />{" "}
+                    <span className="nav_text">Booking</span>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="/booking/allbooking">
+                      All Bookings
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/booking/newbooking">
+                      New Bookings
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/booking/checkbooking">
+                      Check Bookings
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
                 <Logout>
                   <span
                     className={"nav-item nav-link"}
