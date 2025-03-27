@@ -9,8 +9,16 @@ export default class HttpService implements IHttpService {
   private readonly clientId: string;
 
   constructor() {
-    this.baseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
-    this.clientId = `${process.env.NEXT_PUBLIC_API_CLIENT_ID}`;
+    this.baseUrl = `${
+      process.env.NEXT_PUBLIC_API_BASE_URL === undefined
+        ? "https://hup-api-fncbczdffdbnb2dg.canadacentral-01.azurewebsites.net"
+        : process.env.NEXT_PUBLIC_API_BASE_URL
+    }`;
+    this.clientId = `${
+      process.env.NEXT_PUBLIC_API_CLIENT_ID === undefined
+        ? "D95BF9406E39035D87D9EAF4AEA05017EF02ACD1629D52220CAFDD54422A6A35"
+        : process.env.NEXT_PUBLIC_API_CLIENT_ID
+    }`;
   }
 
   callWithoutInterceptor(
@@ -34,6 +42,7 @@ export default class HttpService implements IHttpService {
 
   call(contentType: string = "application/json"): AxiosInstance {
     console.log(`This is test ${this.baseUrl}`);
+    console.log(`This is test ${this.clientId}`);
     let instance = axios.create({
       baseURL: this.baseUrl,
       withCredentials: true,
