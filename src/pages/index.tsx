@@ -9,7 +9,9 @@ export default function Home() {
   //const unitOfService = container.get<IUnitOfService>(TYPES.IUnitOfService);
   const router = useRouter();
   useEffect(() => {
-    router.push("/account/login");
+    router.push(
+      "https://nice-beach-033882b0f.6.azurestaticapps.net/acccount/login"
+    );
   }, []);
   return (
     <>
