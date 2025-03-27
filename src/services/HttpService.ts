@@ -33,6 +33,7 @@ export default class HttpService implements IHttpService {
   }
 
   call(contentType: string = "application/json"): AxiosInstance {
+    console.log(`This is test ${this.baseUrl}`);
     let instance = axios.create({
       baseURL: this.baseUrl,
       withCredentials: true,
@@ -45,7 +46,6 @@ export default class HttpService implements IHttpService {
     if (typeof window !== "undefined") {
       token = localStorage.getItem("at") || "";
       if (token) {
-        console.log(token);
         instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       }
 
