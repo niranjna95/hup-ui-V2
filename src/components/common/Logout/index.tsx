@@ -10,8 +10,7 @@ const Logout: NextPage<LogoutProps> = (props) => {
     localStorage.removeItem("at");
     localStorage.removeItem("utz");
     await signOut({
-      callbackUrl:
-        "https://nice-beach-033882b0f.6.azurestaticapps.net/acccount/login",
+      callbackUrl: "/",
     });
   }
 
