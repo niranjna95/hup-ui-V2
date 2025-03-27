@@ -41,8 +41,6 @@ export default class HttpService implements IHttpService {
   }
 
   call(contentType: string = "application/json"): AxiosInstance {
-    console.log(`This is test ${this.baseUrl}`);
-    console.log(`This is test ${this.clientId}`);
     let instance = axios.create({
       baseURL: this.baseUrl,
       withCredentials: true,
